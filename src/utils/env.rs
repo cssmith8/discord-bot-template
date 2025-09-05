@@ -1,9 +1,9 @@
+#![allow(dead_code)]
 pub fn discord_token() -> String {
-    let bot_name = std::env::var("BOT").expect("BOT environment variable not set");
+    let bot_name = std::env::var("BOT").expect("Must set BOT variable in .env");
     match bot_name.to_lowercase().as_str() {
-        "rustical" => std::env::var("RUSTICAL").expect("RUSTICAL environment variable not set"),
-        "moneymouth" => std::env::var("MONEYMOUTH").expect("MONEYMOUTH environment variable not set"),
-        _ => {panic!("Unknown bot specified in .env")},
+        "name" => std::env::var("NAME").expect("Token for NAME not set"),
+        _ => panic!("Unknown bot specified in .env: [{}] Edit bot names in src/utils/env.rs", bot_name),
     }
 }
 
@@ -13,8 +13,4 @@ pub fn data_path() -> String {
 
 pub fn static_path() -> String {
     std::env::var("STATIC_PATH").unwrap_or_else(|_| "static/".into())
-}
-
-pub fn laptop() -> String {
-    std::env::var("LAPTOP").unwrap_or_else(|_| "0".into())
 }

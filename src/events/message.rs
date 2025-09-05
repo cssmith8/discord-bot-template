@@ -1,16 +1,6 @@
-use crate::{
-    types::{
-        translation::Translation,
-        types::{Data, Error}
-    },
-    utils::{
-        log::log,
-        translations::{get_translation, save_translation}
-    }
-};
+use crate::types::types::{Data, Error};
 use anyhow::Result;
 use poise::serenity_prelude as serenity;
-use regex::Regex;
 
 pub async fn message(
     _ctx: &serenity::Context,

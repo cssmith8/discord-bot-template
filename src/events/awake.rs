@@ -1,10 +1,6 @@
-use crate::{
-    types::types::{Data, Error},
-    utils::env
-};
+use crate::types::types::{Data, Error};
 use anyhow::Result;
 use poise::serenity_prelude as serenity;
-use serenity::model::id::ChannelId;
 
 
 pub async fn awake(
